@@ -7,11 +7,13 @@
 
 import UIKit
 
-class HourlyCollectionViewCell: UICollectionViewCell {
+class HourlyCollectionViewCell: UICollectionViewCell{
+    
 
     @IBOutlet weak var hours: UILabel!
     @IBOutlet weak var imageHourly: UIImageView!
     @IBOutlet weak var temperatureHourly: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

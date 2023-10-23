@@ -27,8 +27,10 @@
 		DA49E3962ADB32DA004BB282 /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3952ADB32DA004BB282 /* ForecastWeather.swift */; };
 		DA49E39B2ADC7C7E004BB282 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3992ADC7C7E004BB282 /* ForecastTableViewCell.swift */; };
 		DA49E39C2ADC7C7E004BB282 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49E39A2ADC7C7E004BB282 /* ForecastTableViewCell.xib */; };
-		DA49E3A42ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3A22ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.swift */; };
-		DA49E3A52ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49E3A32ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.xib */; };
+		DA49E3A82AE54EC7004BB282 /* WeatherCubsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3A62AE54EC7004BB282 /* WeatherCubsTableViewCell.swift */; };
+		DA49E3A92AE54EC7004BB282 /* WeatherCubsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49E3A72AE54EC7004BB282 /* WeatherCubsTableViewCell.xib */; };
+		DA49E3AC2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3AA2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift */; };
+		DA49E3AD2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49E3AB2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +55,10 @@
 		DA49E3952ADB32DA004BB282 /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
 		DA49E3992ADC7C7E004BB282 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		DA49E39A2ADC7C7E004BB282 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
-		DA49E3A22ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCubesForDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
-		DA49E3A32ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCubesForDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
+		DA49E3A62AE54EC7004BB282 /* WeatherCubsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCubsTableViewCell.swift; sourceTree = "<group>"; };
+		DA49E3A72AE54EC7004BB282 /* WeatherCubsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCubsTableViewCell.xib; sourceTree = "<group>"; };
+		DA49E3AA2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCubesCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA49E3AB2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCubesCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +160,10 @@
 		DA49E39D2ADC8DBF004BB282 /* WeatherCubs */ = {
 			isa = PBXGroup;
 			children = (
-				DA49E3A22ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.swift */,
-				DA49E3A32ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.xib */,
+				DA49E3A62AE54EC7004BB282 /* WeatherCubsTableViewCell.swift */,
+				DA49E3A72AE54EC7004BB282 /* WeatherCubsTableViewCell.xib */,
+				DA49E3AA2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift */,
+				DA49E3AB2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib */,
 			);
 			path = WeatherCubs;
 			sourceTree = "<group>";
@@ -229,8 +235,9 @@
 				DA49E3562ABE42E0004BB282 /* LaunchScreen.storyboard in Resources */,
 				DA49E3532ABE42E0004BB282 /* Assets.xcassets in Resources */,
 				DA49E39C2ADC7C7E004BB282 /* ForecastTableViewCell.xib in Resources */,
-				DA49E3A52ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.xib in Resources */,
 				DA49E38C2AD2F0DC004BB282 /* HourlyTableViewCell.xib in Resources */,
+				DA49E3AD2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib in Resources */,
+				DA49E3A92AE54EC7004BB282 /* WeatherCubsTableViewCell.xib in Resources */,
 				DA49E3512ABE42DE004BB282 /* Main.storyboard in Resources */,
 				DA49E3942AD2F2E4004BB282 /* HourlyCollectionViewCell.xib in Resources */,
 			);
@@ -244,15 +251,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA49E36B2ABFB165004BB282 /* WeatherApiWorkerDelegate.swift in Sources */,
+				DA49E3AC2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift in Sources */,
 				DA49E3632ABF9537004BB282 /* ExtensionBool.swift in Sources */,
 				DA49E3932AD2F2E4004BB282 /* HourlyCollectionViewCell.swift in Sources */,
 				DA49E3962ADB32DA004BB282 /* ForecastWeather.swift in Sources */,
 				DA49E38B2AD2F0DC004BB282 /* HourlyTableViewCell.swift in Sources */,
 				DA49E35E2ABF90F7004BB282 /* WeatherInfo.swift in Sources */,
 				DA49E39B2ADC7C7E004BB282 /* ForecastTableViewCell.swift in Sources */,
+				DA49E3A82AE54EC7004BB282 /* WeatherCubsTableViewCell.swift in Sources */,
 				DA49E34E2ABE42DE004BB282 /* MainViewController.swift in Sources */,
 				DA49E34A2ABE42DE004BB282 /* AppDelegate.swift in Sources */,
-				DA49E3A42ADC901D004BB282 /* WeatherCubesForDetailsCollectionViewCell.swift in Sources */,
 				DA49E34C2ABE42DE004BB282 /* SceneDelegate.swift in Sources */,
 				DA49E36D2ABFB190004BB282 /* WeatherApiWorker.swift in Sources */,
 				DA49E3692ABF9751004BB282 /* WeatherResponses.swift in Sources */,

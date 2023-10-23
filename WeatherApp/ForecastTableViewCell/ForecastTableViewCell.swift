@@ -14,15 +14,17 @@ class ForecastTableViewCell: UITableViewCell {
     @IBOutlet weak var minTempWeekDay: UILabel!
     @IBOutlet weak var weekDayIcon: UIImageView!
     @IBOutlet weak var weekDay: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        weekDayIcon.contentMode = .scaleToFill
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-//        imageLineBetweenMinAndMaxTemp.image = UIImage(named: "line")
     }
     
 }

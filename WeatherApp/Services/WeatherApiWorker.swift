@@ -67,8 +67,7 @@ class WeatherApiWorker {
         components.scheme = "https"
         components.host = self.baseUrl
         components.path = weatherType.rawValue
-        components.queryItems = [URLQueryItem(name: "q", value: place)]
-//        components.queryItems = [URLQueryItem(name: "days", value: "3")]
+        components.queryItems = [URLQueryItem(name: "q", value: place), URLQueryItem(name: "days", value: "5")]
         
         return components
     }
