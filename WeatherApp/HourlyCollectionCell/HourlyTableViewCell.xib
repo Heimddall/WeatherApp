@@ -18,7 +18,6 @@
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="llK-jl-c6c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <color key="backgroundColor" red="0.58528604809999996" green="0.93579380400000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yZV-AP-RZ3">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -40,6 +39,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="collectionView" destination="llK-jl-c6c" id="fhg-40-KUG"/>
                 <outlet property="hourlyCollectionView" destination="llK-jl-c6c" id="4fw-8I-CdA"/>
             </connections>
             <point key="canvasLocation" x="53.435114503816791" y="20.422535211267608"/>

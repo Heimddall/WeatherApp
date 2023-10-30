@@ -119,14 +119,16 @@ struct DayWeather: Codable {
     let maxTempF: Double
     let minTempC: Double
     let minTempF: Double
+    let dailyChanceOfRain: Int
     let dayCondition: DayConditionWeather
 
     enum CodingKeys: String, CodingKey {
-        case maxTempC = "maxtemp_c"
-        case maxTempF = "maxtemp_f"
-        case minTempC = "mintemp_c"
-        case minTempF = "mintemp_f"
-        case dayCondition = "condition"
+        case maxTempC          = "maxtemp_c"
+        case maxTempF          = "maxtemp_f"
+        case minTempC          = "mintemp_c"
+        case minTempF          = "mintemp_f"
+        case dailyChanceOfRain = "daily_chance_of_rain"
+        case dayCondition      = "condition"
     }
 }
 

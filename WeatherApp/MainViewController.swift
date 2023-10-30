@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Foundation
+import Lottie
 
 enum WeatherRequestPath: String {
     case currentWeather = "/forecast.json"
@@ -15,6 +16,15 @@ enum WeatherRequestPath: String {
 class MainViewController: UIViewController, WeatherApiWorkerDelegate {
     
     private let apiWorker = WeatherApiWorker()
+    private let settings = Settings()
+    private let adapter = ValuesAdapter()
+    
+    private let animationView: LottieAnimationView = {
+      let lottieAnimationView = LottieAnimationView(name: "Sun")
+      lottieAnimationView.backgroundColor = UIColor(red: 52/255, green: 144/255, blue: 220/255, alpha: 1.0)
+      return lottieAnimationView
+    }()
+    
     var lastResponse: RealtimeWeatherResponse?
     
     let calendar = Calendar.current
@@ -27,6 +37,8 @@ class MainViewController: UIViewController, WeatherApiWorkerDelegate {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet var table : UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -49,6 +61,28 @@ class MainViewController: UIViewController, WeatherApiWorkerDelegate {
         table.register(hourlyTableViewCellNib, forCellReuseIdentifier: "hourlyTableViewCell")
         
         dateFormatter.locale = Locale(identifier: "en_US")
+    
+        table.estimatedSectionHeaderHeight = 0.1
+        table.sectionHeaderHeight = 0.1
+        
+        setupLottieLaunchScreen()
+    }
+    
+    func setupLottieLaunchScreen() {
+          view.addSubview(animationView)
+
+          animationView.frame = view.bounds
+          animationView.center = view.center
+          animationView.alpha = 1
+
+          animationView.play { _ in
+            UIView.animate(withDuration: 0.3, animations: {
+              self.animationView.alpha = 0
+            }, completion: { _ in
+              self.animationView.isHidden = true
+              self.animationView.removeFromSuperview()
+            })
+          }
     }
     
     func gotRealtimeWeather(response: RealtimeWeatherResponse) {
@@ -64,6 +98,21 @@ class MainViewController: UIViewController, WeatherApiWorkerDelegate {
         DispatchQueue.main.async { [weak self] in
             self?.table.reloadSections(IndexSet(integer: 1), with: .automatic)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? SettingViewController {
+            destinationVC.settings = settings
+        }
+    }
+    
+    func updateValues() {
+        guard let info = lastResponse?.currentWeather else { return }
+        temperatureLabel.text = adapter.getTemperature(for: info, with: settings)
+    }
+    
+    @IBAction func refreshWeather(_ sender: Any) {
+        apiWorker.makeCurrentWeatherRequest()
     }
 }
 
@@ -91,7 +140,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         } else if section == 1 {
             return "5 days weather"
         } else if section == 2 {
-            return "Some adittional data about now"
+            return "Some adittional data"
         }
         return nil
     }
@@ -113,8 +162,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                     let weekdays = dateFormatter.weekdaySymbols
                     cell.weekDay.text = weekdays?[weekday - 1] ?? "Unknown"
                     
-                    cell.minTempWeekDay.text = "\(forecast.dayWeather.minTempC)"
-                    cell.maxTempDay.text = "\(forecast.dayWeather.maxTempC)"
+                    cell.minTempWeekDay.text = "\(forecast.dayWeather.minTempC)°C"
+                    cell.maxTempDay.text = "\(forecast.dayWeather.maxTempC)°C"
                     
                     if let imageURL = URL(string: "https:\(forecast.dayWeather.dayCondition.iconUrl)") {
                         URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
@@ -138,13 +187,23 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 150
+            return 140
         } else if indexPath.section == 1 {
             return 60
         } else if indexPath.section == 2 {
             return 500
         }
         return CGFloat()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.systemYellow
+        return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
     
 }

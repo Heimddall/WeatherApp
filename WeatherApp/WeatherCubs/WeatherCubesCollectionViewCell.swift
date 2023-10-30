@@ -9,11 +9,14 @@ import UIKit
 
 class WeatherCubesCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var randomImage: UIImageView!
+
+    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var value: UILabel!
+    @IBOutlet weak var dailyQuantity: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        randomImage.image = UIImage(named: "UV")
+        view.layer.borderWidth = 0.01
+        view.layer.cornerRadius = 30
     }
 
 }

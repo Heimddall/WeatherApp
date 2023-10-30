@@ -4,35 +4,67 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weatherCube" id="gTV-IL-0wX" customClass="WeatherCubesCollectionViewCell" customModule="WeatherApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="86" height="84"/>
+            <rect key="frame" x="0.0" y="0.0" width="136" height="125"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="86" height="84"/>
+                <rect key="frame" x="0.0" y="0.0" width="136" height="125"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTb-Go-08t">
-                        <rect key="frame" x="0.0" y="0.0" width="86" height="84"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbO-Wi-xnB">
+                        <rect key="frame" x="0.0" y="0.0" width="136" height="125"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ai-4V-A8O">
+                                <rect key="frame" x="0.0" y="66" width="136" height="29"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DailyDetail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsM-89-AjJ">
+                                <rect key="frame" x="8" y="16" width="120" height="20"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95353109042858131" blue="0.46362739516914864" alpha="0.41711506622516559" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jsM-89-AjJ" secondAttribute="trailing" constant="8" id="I7Y-Ao-ioV"/>
+                            <constraint firstAttribute="bottom" secondItem="1ai-4V-A8O" secondAttribute="bottom" constant="30" id="LHs-Rw-Im3"/>
+                            <constraint firstItem="jsM-89-AjJ" firstAttribute="top" secondItem="FbO-Wi-xnB" secondAttribute="top" constant="16" id="Mu0-Rs-O9t"/>
+                            <constraint firstItem="1ai-4V-A8O" firstAttribute="leading" secondItem="FbO-Wi-xnB" secondAttribute="leading" id="hmu-4V-e1X"/>
+                            <constraint firstAttribute="trailing" secondItem="1ai-4V-A8O" secondAttribute="trailing" id="ioX-it-pTO"/>
+                            <constraint firstItem="jsM-89-AjJ" firstAttribute="leading" secondItem="FbO-Wi-xnB" secondAttribute="leading" constant="8" id="qQz-fe-emM"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="iTb-Go-08t" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1ow-MN-sfc"/>
-                <constraint firstAttribute="bottom" secondItem="iTb-Go-08t" secondAttribute="bottom" id="8H5-a6-puW"/>
-                <constraint firstItem="iTb-Go-08t" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rqs-8b-V41"/>
-                <constraint firstAttribute="trailing" secondItem="iTb-Go-08t" secondAttribute="trailing" id="oOL-ro-jm7"/>
+                <constraint firstAttribute="trailing" secondItem="FbO-Wi-xnB" secondAttribute="trailing" id="jIW-5A-Okd"/>
+                <constraint firstItem="FbO-Wi-xnB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pA9-JR-r1m"/>
+                <constraint firstAttribute="bottom" secondItem="FbO-Wi-xnB" secondAttribute="bottom" id="xcG-nb-UHA"/>
+                <constraint firstItem="FbO-Wi-xnB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ynf-DY-pJe"/>
             </constraints>
-            <size key="customSize" width="86" height="84"/>
+            <size key="customSize" width="136" height="125"/>
             <connections>
-                <outlet property="randomImage" destination="iTb-Go-08t" id="EHo-8q-pfZ"/>
+                <outlet property="dailyQuantity" destination="jsM-89-AjJ" id="BjT-3o-PvR"/>
+                <outlet property="value" destination="1ai-4V-A8O" id="xs1-dX-8uY"/>
+                <outlet property="view" destination="FbO-Wi-xnB" id="Tjn-yq-gUy"/>
             </connections>
-            <point key="canvasLocation" x="166.41221374045801" y="31.690140845070424"/>
+            <point key="canvasLocation" x="204.58015267175571" y="46.126760563380287"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

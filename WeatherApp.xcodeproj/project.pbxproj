@@ -31,6 +31,11 @@
 		DA49E3A92AE54EC7004BB282 /* WeatherCubsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49E3A72AE54EC7004BB282 /* WeatherCubsTableViewCell.xib */; };
 		DA49E3AC2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3AA2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift */; };
 		DA49E3AD2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA49E3AB2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib */; };
+		DA49E3B12AEE7FBF004BB282 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3B02AEE7FBF004BB282 /* SettingViewController.swift */; };
+		DA49E3B32AEE820A004BB282 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3B22AEE820A004BB282 /* Settings.swift */; };
+		DA49E3B52AEE9282004BB282 /* ValuesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49E3B42AEE9282004BB282 /* ValuesAdapter.swift */; };
+		DA49E3BA2AEF1D4B004BB282 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DA49E3B92AEF1D4B004BB282 /* Lottie */; };
+		DA49E3BC2AEF1DEC004BB282 /* Sun.json in Resources */ = {isa = PBXBuildFile; fileRef = DA49E3BB2AEF1DEC004BB282 /* Sun.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +64,10 @@
 		DA49E3A72AE54EC7004BB282 /* WeatherCubsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCubsTableViewCell.xib; sourceTree = "<group>"; };
 		DA49E3AA2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCubesCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA49E3AB2AE5501F004BB282 /* WeatherCubesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCubesCollectionViewCell.xib; sourceTree = "<group>"; };
+		DA49E3B02AEE7FBF004BB282 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		DA49E3B22AEE820A004BB282 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		DA49E3B42AEE9282004BB282 /* ValuesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesAdapter.swift; sourceTree = "<group>"; };
+		DA49E3BB2AEF1DEC004BB282 /* Sun.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sun.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA49E3612ABF948F004BB282 /* Alamofire in Frameworks */,
+				DA49E3BA2AEF1D4B004BB282 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +105,7 @@
 				DA49E3492ABE42DE004BB282 /* AppDelegate.swift */,
 				DA49E34B2ABE42DE004BB282 /* SceneDelegate.swift */,
 				DA49E34D2ABE42DE004BB282 /* MainViewController.swift */,
+				DA49E3B02AEE7FBF004BB282 /* SettingViewController.swift */,
 				DA49E39D2ADC8DBF004BB282 /* WeatherCubs */,
 				DA49E3982ADC7C3A004BB282 /* ForecastTableViewCell */,
 				DA49E3742AC0A497004BB282 /* HourlyCollectionCell */,
@@ -105,6 +116,7 @@
 				DA49E3522ABE42E0004BB282 /* Assets.xcassets */,
 				DA49E3542ABE42E0004BB282 /* LaunchScreen.storyboard */,
 				DA49E3572ABE42E0004BB282 /* Info.plist */,
+				DA49E3BB2AEF1DEC004BB282 /* Sun.json */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -133,6 +145,8 @@
 			children = (
 				DA49E36C2ABFB190004BB282 /* WeatherApiWorker.swift */,
 				DA49E36A2ABFB165004BB282 /* WeatherApiWorkerDelegate.swift */,
+				DA49E3B22AEE820A004BB282 /* Settings.swift */,
+				DA49E3B42AEE9282004BB282 /* ValuesAdapter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -186,6 +200,7 @@
 			name = WeatherApp;
 			packageProductDependencies = (
 				DA49E3602ABF948F004BB282 /* Alamofire */,
+				DA49E3B92AEF1D4B004BB282 /* Lottie */,
 			);
 			productName = WeatherApp;
 			productReference = DA49E3462ABE42DE004BB282 /* WeatherApp.app */;
@@ -217,6 +232,7 @@
 			mainGroup = DA49E33D2ABE42DE004BB282;
 			packageReferences = (
 				DA49E35F2ABF948F004BB282 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DA49E3B82AEF1D4B004BB282 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = DA49E3472ABE42DE004BB282 /* Products */;
 			projectDirPath = "";
@@ -232,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA49E3BC2AEF1DEC004BB282 /* Sun.json in Resources */,
 				DA49E3562ABE42E0004BB282 /* LaunchScreen.storyboard in Resources */,
 				DA49E3532ABE42E0004BB282 /* Assets.xcassets in Resources */,
 				DA49E39C2ADC7C7E004BB282 /* ForecastTableViewCell.xib in Resources */,
@@ -253,6 +270,8 @@
 				DA49E36B2ABFB165004BB282 /* WeatherApiWorkerDelegate.swift in Sources */,
 				DA49E3AC2AE5501F004BB282 /* WeatherCubesCollectionViewCell.swift in Sources */,
 				DA49E3632ABF9537004BB282 /* ExtensionBool.swift in Sources */,
+				DA49E3B32AEE820A004BB282 /* Settings.swift in Sources */,
+				DA49E3B12AEE7FBF004BB282 /* SettingViewController.swift in Sources */,
 				DA49E3932AD2F2E4004BB282 /* HourlyCollectionViewCell.swift in Sources */,
 				DA49E3962ADB32DA004BB282 /* ForecastWeather.swift in Sources */,
 				DA49E38B2AD2F0DC004BB282 /* HourlyTableViewCell.swift in Sources */,
@@ -261,6 +280,7 @@
 				DA49E3A82AE54EC7004BB282 /* WeatherCubsTableViewCell.swift in Sources */,
 				DA49E34E2ABE42DE004BB282 /* MainViewController.swift in Sources */,
 				DA49E34A2ABE42DE004BB282 /* AppDelegate.swift in Sources */,
+				DA49E3B52AEE9282004BB282 /* ValuesAdapter.swift in Sources */,
 				DA49E34C2ABE42DE004BB282 /* SceneDelegate.swift in Sources */,
 				DA49E36D2ABFB190004BB282 /* WeatherApiWorker.swift in Sources */,
 				DA49E3692ABF9751004BB282 /* WeatherResponses.swift in Sources */,
@@ -492,6 +512,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		DA49E3B82AEF1D4B004BB282 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -499,6 +527,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA49E35F2ABF948F004BB282 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		DA49E3B92AEF1D4B004BB282 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA49E3B82AEF1D4B004BB282 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

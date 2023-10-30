@@ -23,7 +23,7 @@ class HourlyCollectionViewCell: UICollectionViewCell{
         hours.font = .boldSystemFont(ofSize: 16)
         hours.textColor = .black
         temperatureHourly.text = "11°C"
-        temperatureHourly.textColor = .blue
+        temperatureHourly.textColor = .black
         temperatureHourly.font = .boldSystemFont(ofSize: 16)
     }
 

@@ -9,6 +9,7 @@ import UIKit
 
 class HourlyTableViewCell: UITableViewCell, WeatherApiWorkerDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     private let apiWorker = WeatherApiWorker()
     var lastResponseForecast: RealtimeWeatherResponse?
     var hourlyTemp = [Double]()
@@ -51,6 +52,8 @@ class HourlyTableViewCell: UITableViewCell, WeatherApiWorkerDelegate {
         DispatchQueue.main.async { [weak self] in
             self?.hourlyCollectionView.reloadData()
         }
+        
+        collectionView.backgroundColor = .clear
         
     }
     
